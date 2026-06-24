@@ -1,58 +1,113 @@
+```html
 <!DOCTYPE html>
 <html lang="mr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anhelo</title>
+<title>ANHELO</title>
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    padding:0;
-    background:#0b0b0b;
-    color:#f4e6c1;
-    font-family:Georgia, serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
+height:100vh;
+overflow:hidden;
+background:linear-gradient(to bottom,#050505,#111);
+font-family:Georgia,serif;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#f5e6c8;
+position:relative;
+}
+
+/* Stars */
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 4s infinite;
+}
+
+@keyframes twinkle{
+0%,100%{opacity:.2;}
+50%{opacity:1;}
 }
 
 .container{
-    max-width:800px;
-    text-align:center;
-    padding:40px;
+text-align:center;
+z-index:2;
+padding:20px;
+max-width:900px;
 }
 
 h1{
-    font-size:5rem;
-    margin-bottom:10px;
-    letter-spacing:8px;
+font-size:6rem;
+letter-spacing:12px;
+color:#d4af37;
+text-shadow:0 0 20px rgba(212,175,55,.6);
+margin-bottom:20px;
 }
 
 .tagline{
-    font-size:1.2rem;
-    font-style:italic;
-    opacity:0.8;
-    margin-bottom:50px;
+font-style:italic;
+font-size:1.2rem;
+opacity:.8;
+margin-bottom:50px;
 }
 
 .quote{
-    font-size:1.3rem;
-    line-height:2;
+font-size:1.4rem;
+line-height:2;
+margin-bottom:50px;
 }
 
-.line{
-    margin-top:40px;
-    opacity:0.7;
+.enter-btn{
+display:inline-block;
+padding:16px 40px;
+border:1px solid #d4af37;
+color:#d4af37;
+text-decoration:none;
+font-size:1rem;
+letter-spacing:2px;
+transition:.3s;
+border-radius:50px;
+}
+
+.enter-btn:hover{
+background:#d4af37;
+color:black;
+}
+
+.footer{
+margin-top:40px;
+opacity:.5;
+font-size:.9rem;
 }
 
 </style>
-
 </head>
 
 <body>
+
+<script>
+for(let i=0;i<120;i++){
+let star=document.createElement("div");
+star.className="star";
+star.style.width=Math.random()*3+"px";
+star.style.height=star.style.width;
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+star.style.animationDelay=Math.random()*5+"s";
+document.body.appendChild(star);
+}
+</script>
 
 <div class="container">
 
@@ -68,7 +123,11 @@ Where longing becomes words, and words become a world.
 ही एका भावनेसाठी लिहिली आहे."
 </div>
 
-<div class="line">
+<a href="#" class="enter-btn">
+अनाहेलोत प्रवेश करा
+</a>
+
+<div class="footer">
 — A
 </div>
 
@@ -76,3 +135,5 @@ Where longing becomes words, and words become a world.
 
 </body>
 </html>
+```
+
